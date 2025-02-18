@@ -1,0 +1,119 @@
+body {
+  background-image: url(images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(218, 208, 218);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-image: url(images/background-pattern-mobile.svg);
+  }
+}
+
+
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 500px;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 650px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20%); /* Start position */
+  animation: fadeInUp 0.6s ease-out forwards; /* Apply animation */
+  animation-delay: 0.1s; /* Optional delay for better effect */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  gap: 20px;
+  color: hsl(292, 42%, 14%);
+
+}
+
+.title img {
+  max-width: 25px;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  justify-content: space-between;
+  cursor: pointer;
+  color: hsl(292, 42%, 14%);
+  transition: 0.30s;
+}
+
+.question:hover {
+  color: hsl( 281, 83%, 54% );
+}
+
+.minus {
+  display: none;
+}
+
+.plus {
+  display: block;
+}
+
+.answer {
+  max-height: 0; /* Initially hidden */
+  overflow: hidden;
+  transition: max-height 0.20s ease-in-out, padding 0.20s ease-in-out;
+  padding: 0;
+  color: hsl(292, 16%, 49%);
+  line-height: 20px; 
+
+}
+
+.answer-on {
+  padding-bottom: 20px; /* Adjust padding when open */
+  line-height: 20px;
+  color: hsl(292, 16%, 49%);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgba(218, 208, 218, 0.274);
+  
+}
+
+.section:last-child {
+  border: none;
+  padding: 0;
+}
